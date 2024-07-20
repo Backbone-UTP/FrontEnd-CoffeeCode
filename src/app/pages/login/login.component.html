@@ -1,0 +1,24 @@
+<div
+  class="w-1/2 mx-auto h-full items-center justify-center flex ">
+  <form class="h-1/2 w-1/2 absolute top-[25%]" [formGroup]="loginForm"
+    (ngSubmit)="onSubmit()">
+    <label> Email </label>
+    <input class="w-full border rounded-lg px-2" type="text"
+      formControlName="email" />
+
+    <label> Password </label>
+    <input class="w-full border rounded-lg px-2" type="password"
+      formControlName="password" />
+
+    @if (invalidCredentials) {
+    <p class="underline text-red-600">
+      Invalid credentials
+    </p>
+    }
+
+    <button type="submit" class="mt-2 px-4 py-1 bg-blue-500 rounded-lg"> enviar
+    </button>
+    <a class="underline text-blue-400 cursor-pointer mt-2 mx-2"
+      href="/register">crate account</a>
+  </form>
+</div>
